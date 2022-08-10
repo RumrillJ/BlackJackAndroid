@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Play_Blackjack"
+        android:background="@drawable/greentable"
+        android:clipChildren="false">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:background="@color/deepseablue"
+        android:text="@string/help_button"
+        android:id="@+id/rules"
+        >
+
+    </Button>
+
+    <TextView
+            android:id="@+id/Value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible" />
+
+
+    <Button
+        android:id="@+id/Stand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="20dp"
+        android:layout_toStartOf="@id/DoubleDwn"
+        android:text="Stand"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/Hit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@id/DoubleDwn"
+        android:text="Hit"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/Surrender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/Stand"
+        android:layout_alignStart="@id/Stand"
+        android:text="Surrender"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/DoubleDwn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Double Down"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/Split"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/Hit"
+        android:layout_alignEnd="@id/Hit"
+        android:text="Split"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/quit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:text="Return to Main Menu"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/Replay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/quit"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="Play Again"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/userTurntxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="#FFFFFF"
+        android:padding="3dp"
+        android:text="user turn"
+        android:textColor="#000000"
+        android:visibility="invisible">
+
+    </TextView>
+
+    <RelativeLayout
+        android:id="@+id/userscr"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/quit"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp" />
+
+    <RelativeLayout
+        android:id="@+id/dealerscr"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_above="@id/quit"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="100dp" />
+
+    <RelativeLayout
+        android:id="@+id/bettingLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="#AECFAF"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/betPrompt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/submitBet"
+            android:layout_alignStart="@id/InputLayer"
+            android:layout_marginBottom="15dp"
+            android:text="Current Money:\nPlease Enter Your Bet:"
+            android:textColor="#000000"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/submitBet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/InputLayer"
+            android:layout_marginEnd="10dp"
+            android:layout_toEndOf="@id/InputLayer"
+            android:text="Enter"
+            tools:ignore="TextContrastCheck" />
+
+        <RelativeLayout
+            android:id="@+id/InputLayer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="55dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="10dp"
+            android:background="#494949">
+
+            <EditText
+                android:id="@+id/betInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_toEndOf="@id/dollar"
+                android:background="#F8F8F8"
+                android:ems="5"
+                android:gravity="center_vertical"
+                android:hint="0000000.00"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:minHeight="48dp"
+                android:textColor="#000000"
+                android:textColorHint="#A3A3A3"
+                android:textSize="28sp"
+                tools:ignore="TextContrastCheck" />
+
+            <TextView
+                android:id="@+id/dollar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:background="#F8F8F8"
+                android:gravity="center_vertical|end"
+                android:minWidth="14dp"
+                android:minHeight="48dp"
+                android:text="$"
+                android:textColor="#000000"
+                android:textSize="30sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/endGameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/quit"
+        android:layout_centerHorizontal="true"
+        android:padding="10dp"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/winOrLoss"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:shadowColor="#000000"
+            android:shadowDx="0"
+            android:shadowDy="1"
+            android:shadowRadius="15"
+            android:text="Won With 21!"
+            android:textColor="#CDB8FF"
+            android:textSize="30sp"
+            tools:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/betvalue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/winOrLoss"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:shadowColor="#000000"
+            android:shadowDx="0"
+            android:shadowDy="3"
+            android:text="winnings"
+            android:textColor="#B0F697"
+            android:textSize="28sp"
+            tools:shadowRadius="15" />
+    </RelativeLayout>
+
+</RelativeLayout>

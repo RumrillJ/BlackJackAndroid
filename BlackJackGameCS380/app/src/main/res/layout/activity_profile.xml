@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Play_Blackjack"
+    android:background="@color/oceanNight">
+
+
+    <TextView
+        android:id="@+id/ProfileDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:text="@string/profile_page"
+        android:textColor="#BEABE1"
+        android:textSize="45sp" />
+
+    <Button
+        android:id="@+id/changeProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ProfileDisplay"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Change Profile" />
+
+    <RelativeLayout
+        android:id="@+id/profileReadout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/changeProfile"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/profileText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Current Profile: "
+            android:textColor="@color/white"
+            android:textSize="23sp" />
+
+        <TextView
+            android:id="@+id/profileName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/profileText"
+            android:text="NAME"
+            android:textColor="#BEABE1"
+            android:textSize="23sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/bankReadout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profileReadout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp">
+
+        <TextView
+            android:id="@+id/bankNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/currentBank"
+            android:text="0000.00"
+            android:textColor="#87EC6F"
+            android:textSize="23sp" />
+
+        <TextView
+            android:id="@+id/currentBank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Current Bank:  $"
+            android:textColor="@color/white"
+            android:textSize="23sp" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/bailOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bankReadout"
+        android:layout_centerHorizontal="true"
+        android:text="Bail Me Out" />
+
+    <RelativeLayout
+        android:id="@+id/numBotsLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bailOut"
+        android:layout_alignEnd="@id/numDecksLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp">
+
+        <TextView
+            android:id="@+id/botsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="5dp"
+            android:text="Number of Bots: "
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/BotPlayers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/botsText"
+            android:background="@color/white"
+            android:ems="3"
+            android:gravity="center|center_horizontal"
+            android:hint="@string/number_of_bot_players"
+            android:inputType="number"
+            android:minHeight="48dp"
+            android:textColor="@color/black"
+            android:textColorHint="#939393"
+            tools:ignore="TouchTargetSizeCheck" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/numDecksLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/numBotsLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/decksText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="5dp"
+            android:text="Number of Decks: "
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/decksNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/decksText"
+            android:background="@color/white"
+            android:ems="3"
+            android:gravity="center"
+            android:hint="###"
+            android:inputType="number"
+            android:minHeight="48dp"
+            android:textColor="@color/black"
+            android:textColorHint="#939393" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/musicSound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/numDecksLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp">
+
+        <Switch
+            android:id="@+id/soundToggle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:minHeight="48dp"
+            android:text="Sound "
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:thumbTint="#8863CC"
+            android:trackTint="#DDDDDD" />
+
+        <Switch
+            android:id="@+id/musicToggle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/soundToggle"
+            android:minHeight="48dp"
+            android:text="Music "
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:thumbTint="#8863CC"
+            android:trackTint="#DDDDDD" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/apply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/musicSound"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="Apply Settings" />
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="Main Menu" />
+
+</RelativeLayout>
+
+
+
+
